@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react";
+import GetBook from "./GetBooks";
+import Navbar from "./Navbar";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Fragment>
+			<Navbar />
+			<div className="flex content-end flex-wrap h-screen pt-20">
+				<div className="lg:w-1/3  p-2"></div>
+				<div className="lg:w-1/3 w-full  h-full mx-5 ">
+					<GetBook />
+				</div>
+				<div className="lg:w-1/3  p-2"></div>
+			</div>
+		</Fragment>
+	);
 }
 
 export default App;

@@ -3,6 +3,7 @@ import React, { useState, Fragment } from "react";
 const BookList = ({ data }) => {
 	const [collapse, setCollapse] = useState(false);
 	const [collapse2, setCollapse2] = useState(false);
+	console.log(data);
 
 	function handleCollapse() {
 		setCollapse(!collapse);
@@ -11,7 +12,7 @@ const BookList = ({ data }) => {
 		setCollapse2(!collapse2);
 	}
 	function ResultCard() {
-		return (
+		return data.pdfdrive.length > 0 ? (
 			<div className="w-full rounded overflow-hidden shadow-xl mt-3 mb-3 p-2">
 				<div className=" m-6 text-lg text-justify">
 					<div className="inline-flex">
@@ -39,11 +40,13 @@ const BookList = ({ data }) => {
 						);
 					})}
 			</div>
-		);
+		) : null;
 	}
 
 	function ResultCard2() {
-		return (
+		console.log(data.bookFi.length);
+
+		return data.bookFi.length > 0 ? (
 			<div className="w-full rounded overflow-hidden shadow-xl mt-7 mb-3 p-2">
 				<div className=" m-6 text-lg text-justify">
 					<div className="inline-flex">
@@ -72,7 +75,7 @@ const BookList = ({ data }) => {
 						);
 					})}
 			</div>
-		);
+		) : null;
 	}
 	// } else {
 	return data ? (
